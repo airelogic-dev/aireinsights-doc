@@ -5,7 +5,15 @@
       "category" : "",
       "tags"     : "featured,, guides",
       "url"      : "/docs/getting-started/",
-      "date"     : "2021-05-14 14:02:11 +0000"
+      "date"     : "2021-05-14 15:16:30 +0000"
+    } ,
+  
+    {
+      "title"    : "Module Bank",
+      "category" : "",
+      "tags"     : "featured,, guides",
+      "url"      : "/docs/module-bank/",
+      "date"     : "2021-05-14 15:16:30 +0000"
     } 
   
 ]
