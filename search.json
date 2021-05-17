@@ -1,19 +1,83 @@
 [
   
     {
+      "title"    : "Pushing AireInsights to the limit",
+      "category" : "",
+      "tags"     : "guides,, advanced",
+      "url"      : "/docs/advanced_topics/",
+      "date"     : "2021-05-17 10:58:08 +0000"
+    } ,
+  
+    {
+      "title"    : "API",
+      "category" : "",
+      "tags"     : "guides,, advanced",
+      "url"      : "/docs/api_guide/",
+      "date"     : "2021-05-17 10:58:08 +0000"
+    } ,
+  
+    {
+      "title"    : "Best Practices",
+      "category" : "",
+      "tags"     : "guides",
+      "url"      : "/docs/best_practices/",
+      "date"     : "2021-05-17 10:58:08 +0000"
+    } ,
+  
+    {
+      "title"    : "Data Sources",
+      "category" : "",
+      "tags"     : "resources",
+      "url"      : "/docs/data_sources/",
+      "date"     : "2021-05-17 10:58:08 +0000"
+    } ,
+  
+    {
+      "title"    : "FAQ",
+      "category" : "",
+      "tags"     : "featured,, guides",
+      "url"      : "/docs/faq/",
+      "date"     : "2021-05-17 10:58:08 +0000"
+    } ,
+  
+    {
       "title"    : "Getting Started with AireInsights",
       "category" : "",
       "tags"     : "featured,, guides",
       "url"      : "/docs/getting-started/",
-      "date"     : "2021-05-14 15:16:30 +0000"
+      "date"     : "2021-05-17 10:58:08 +0000"
     } ,
   
     {
-      "title"    : "Module Bank",
+      "title"    : "Module A",
       "category" : "",
-      "tags"     : "featured,, guides",
-      "url"      : "/docs/module-bank/",
-      "date"     : "2021-05-14 15:16:30 +0000"
+      "tags"     : "modules",
+      "url"      : "/docs/modules/module_A/",
+      "date"     : "2021-05-17 10:58:08 +0000"
+    } ,
+  
+    {
+      "title"    : "Module B",
+      "category" : "",
+      "tags"     : "modules",
+      "url"      : "/docs/modules/module_B/",
+      "date"     : "2021-05-17 10:58:08 +0000"
+    } ,
+  
+    {
+      "title"    : "Module C",
+      "category" : "",
+      "tags"     : "modules",
+      "url"      : "/docs/modules/module_C/",
+      "date"     : "2021-05-17 10:58:08 +0000"
+    } ,
+  
+    {
+      "title"    : "Module D",
+      "category" : "",
+      "tags"     : "modules",
+      "url"      : "/docs/modules/module_D/",
+      "date"     : "2021-05-17 10:58:08 +0000"
     } 
   
 ]
