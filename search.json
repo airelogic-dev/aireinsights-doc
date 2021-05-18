@@ -4,8 +4,8 @@
       "title"    : "API",
       "category" : "",
       "tags"     : "guides,, advanced",
-      "url"      : "/docs/api_guide/",
-      "date"     : "2021-05-18 11:52:30 +0000"
+      "url"      : "/docs/api-guide/",
+      "date"     : "2021-05-18 13:20:37 +0000"
     } ,
   
     {
@@ -13,7 +13,7 @@
       "category" : "",
       "tags"     : "featured,, guides",
       "url"      : "/docs/faq/",
-      "date"     : "2021-05-18 11:52:30 +0000"
+      "date"     : "2021-05-18 13:20:37 +0000"
     } ,
   
     {
@@ -21,55 +21,63 @@
       "category" : "",
       "tags"     : "featured,, guides",
       "url"      : "/docs/getting-started/",
-      "date"     : "2021-05-18 11:52:30 +0000"
+      "date"     : "2021-05-18 13:20:37 +0000"
     } ,
   
     {
       "title"    : "Pushing AireInsights to the limit",
       "category" : "",
       "tags"     : "guides,, advanced",
-      "url"      : "/docs/ideas/advanced_topics/",
-      "date"     : "2021-05-18 11:52:30 +0000"
+      "url"      : "/docs/ideas/advanced-topics/",
+      "date"     : "2021-05-18 13:20:37 +0000"
     } ,
   
     {
       "title"    : "Best Practices",
       "category" : "",
       "tags"     : "guides",
-      "url"      : "/docs/ideas/best_practices/",
-      "date"     : "2021-05-18 11:52:30 +0000"
+      "url"      : "/docs/ideas/best-practices/",
+      "date"     : "2021-05-18 13:20:37 +0000"
     } ,
   
     {
       "title"    : "Data Sources",
       "category" : "",
       "tags"     : "resources",
-      "url"      : "/docs/ideas/data_sources/",
-      "date"     : "2021-05-18 11:52:30 +0000"
+      "url"      : "/docs/ideas/data-sources/",
+      "date"     : "2021-05-18 13:20:37 +0000"
     } ,
   
     {
       "title"    : "Example Tasks",
       "category" : "",
       "tags"     : "resources",
-      "url"      : "/docs/ideas/example_tasks/",
-      "date"     : "2021-05-18 11:52:30 +0000"
+      "url"      : "/docs/ideas/example-tasks/",
+      "date"     : "2021-05-18 13:20:37 +0000"
     } ,
   
     {
       "title"    : "Bespoke Spellchecker",
       "category" : "",
       "tags"     : "modules",
-      "url"      : "/docs/modules/module_bespoke_spellchecker/",
-      "date"     : "2021-05-18 11:52:30 +0000"
+      "url"      : "/docs/modules/module-bespoke-spellchecker/",
+      "date"     : "2021-05-18 13:20:37 +0000"
     } ,
   
     {
       "title"    : "Number Extraction",
       "category" : "",
       "tags"     : "modules",
-      "url"      : "/docs/modules/module_number_extraction/",
-      "date"     : "2021-05-18 11:52:30 +0000"
+      "url"      : "/docs/modules/module-number-extraction/",
+      "date"     : "2021-05-18 13:20:37 +0000"
+    } ,
+  
+    {
+      "title"    : "AireInsights Pipelines",
+      "category" : "",
+      "tags"     : "description",
+      "url"      : "/docs/pipeline/",
+      "date"     : "2021-05-18 13:20:37 +0000"
     } 
   
 ]
