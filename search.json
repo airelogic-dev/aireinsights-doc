@@ -1,43 +1,11 @@
 [
   
     {
-      "title"    : "Pushing AireInsights to the limit",
-      "category" : "",
-      "tags"     : "guides,, advanced",
-      "url"      : "/docs/advanced_topics/",
-      "date"     : "2021-05-17 12:42:27 +0000"
-    } ,
-  
-    {
       "title"    : "API",
       "category" : "",
       "tags"     : "guides,, advanced",
       "url"      : "/docs/api_guide/",
-      "date"     : "2021-05-17 12:42:27 +0000"
-    } ,
-  
-    {
-      "title"    : "Best Practices",
-      "category" : "",
-      "tags"     : "guides",
-      "url"      : "/docs/best_practices/",
-      "date"     : "2021-05-17 12:42:27 +0000"
-    } ,
-  
-    {
-      "title"    : "Data Sources",
-      "category" : "",
-      "tags"     : "resources",
-      "url"      : "/docs/data_sources/",
-      "date"     : "2021-05-17 12:42:27 +0000"
-    } ,
-  
-    {
-      "title"    : "Example Tasks",
-      "category" : "",
-      "tags"     : "resources",
-      "url"      : "/docs/example_tasks/",
-      "date"     : "2021-05-17 12:42:27 +0000"
+      "date"     : "2021-05-18 11:52:30 +0000"
     } ,
   
     {
@@ -45,7 +13,7 @@
       "category" : "",
       "tags"     : "featured,, guides",
       "url"      : "/docs/faq/",
-      "date"     : "2021-05-17 12:42:27 +0000"
+      "date"     : "2021-05-18 11:52:30 +0000"
     } ,
   
     {
@@ -53,39 +21,55 @@
       "category" : "",
       "tags"     : "featured,, guides",
       "url"      : "/docs/getting-started/",
-      "date"     : "2021-05-17 12:42:27 +0000"
+      "date"     : "2021-05-18 11:52:30 +0000"
     } ,
   
     {
-      "title"    : "Module A",
+      "title"    : "Pushing AireInsights to the limit",
       "category" : "",
-      "tags"     : "modules",
-      "url"      : "/docs/modules/module_A/",
-      "date"     : "2021-05-17 12:42:27 +0000"
+      "tags"     : "guides,, advanced",
+      "url"      : "/docs/ideas/advanced_topics/",
+      "date"     : "2021-05-18 11:52:30 +0000"
     } ,
   
     {
-      "title"    : "Module B",
+      "title"    : "Best Practices",
       "category" : "",
-      "tags"     : "modules",
-      "url"      : "/docs/modules/module_B/",
-      "date"     : "2021-05-17 12:42:27 +0000"
+      "tags"     : "guides",
+      "url"      : "/docs/ideas/best_practices/",
+      "date"     : "2021-05-18 11:52:30 +0000"
     } ,
   
     {
-      "title"    : "Module C",
+      "title"    : "Data Sources",
       "category" : "",
-      "tags"     : "modules",
-      "url"      : "/docs/modules/module_C/",
-      "date"     : "2021-05-17 12:42:27 +0000"
+      "tags"     : "resources",
+      "url"      : "/docs/ideas/data_sources/",
+      "date"     : "2021-05-18 11:52:30 +0000"
     } ,
   
     {
-      "title"    : "Module D",
+      "title"    : "Example Tasks",
+      "category" : "",
+      "tags"     : "resources",
+      "url"      : "/docs/ideas/example_tasks/",
+      "date"     : "2021-05-18 11:52:30 +0000"
+    } ,
+  
+    {
+      "title"    : "Bespoke Spellchecker",
       "category" : "",
       "tags"     : "modules",
-      "url"      : "/docs/modules/module_D/",
-      "date"     : "2021-05-17 12:42:27 +0000"
+      "url"      : "/docs/modules/module_bespoke_spellchecker/",
+      "date"     : "2021-05-18 11:52:30 +0000"
+    } ,
+  
+    {
+      "title"    : "Number Extraction",
+      "category" : "",
+      "tags"     : "modules",
+      "url"      : "/docs/modules/module_number_extraction/",
+      "date"     : "2021-05-18 11:52:30 +0000"
     } 
   
 ]
