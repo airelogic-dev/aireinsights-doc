@@ -6,20 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Example Tasks | AireInsights Docs</title>
+<title>AireInsights Structure | AireInsights Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Example Tasks" />
+<meta property="og:title" content="AireInsights Structure" />
 <meta name="author" content="Anton Goetzee-Barral" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="AireInsights Documentation - Find changelogs and tutorials and videos on how to setup and use AireInsights" />
-<meta property="og:description" content="AireInsights Documentation - Find changelogs and tutorials and videos on how to setup and use AireInsights" />
+<meta name="description" content="The pipeline" />
+<meta property="og:description" content="The pipeline" />
 <meta property="og:site_name" content="AireInsights Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-05-20T21:44:23+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Example Tasks" />
+<meta property="twitter:title" content="AireInsights Structure" />
 <script type="application/ld+json">
-{"description":"AireInsights Documentation - Find changelogs and tutorials and videos on how to setup and use AireInsights","@type":"BlogPosting","headline":"Example Tasks","dateModified":"2021-05-20T21:44:23+00:00","datePublished":"2021-05-20T21:44:23+00:00","url":"/docs/ideas/example-tasks/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/ideas/example-tasks/"},"author":{"@type":"Person","name":"Anton Goetzee-Barral"},"@context":"https://schema.org"}</script>
+{"description":"The pipeline","@type":"BlogPosting","headline":"AireInsights Structure","dateModified":"2021-05-20T21:44:23+00:00","datePublished":"2021-05-20T21:44:23+00:00","url":"/docs/ai_structure/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/ai_structure/"},"author":{"@type":"Person","name":"Anton Goetzee-Barral"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="/assets/posts/"/>
@@ -128,7 +128,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/ai_structure/">AireInsights Structure</a></li>
+                      <li class="uk-active"><a href="/docs/ai_structure/">AireInsights Structure</a></li>
                     
                       
                       
@@ -173,9 +173,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Example Tasks</h1>
+                    <h1 class="uk-article-title">AireInsights Structure</h1>
 
-                    <p class="subtitle uk-text-lead uk-text-muted">Examples of tasks handled by AireInsights</p>
+                    
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -192,11 +192,61 @@
                     </div>
 
                     <div class="article-content">
-                        
+                        <h2 id="the-pipeline">The pipeline</h2>
+
+<p>The pipeline is a major component in the AireInsights software structure,
+handling data inputs, outputs, and configuring the steps and callable modules.</p>
+
+<p>The schematic below illustrates a possible pipeline configuration.
+Steps A-F represent independent stages at which a task occurs. The tasks can include 
+filtering data, calling modules or external services.</p>
+
+<p><img src="/assets/img/pipeline_detail.png" alt="pipelines" /></p>
+
+<p>Example of json and yaml pipeline configurations are shown below. The Steps value
+is a list of step configurations which parse data to the analytics modules e.g. using the
+<a href="/docs/sdk/python-sdk/">python SDK</a>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">json</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="err">Creator:</span><span class="w"> </span><span class="err">'testuser'</span><span class="p">,</span><span class="w">
+  </span><span class="err">Name:</span><span class="w"> </span><span class="err">'example_pipeline'</span><span class="p">,</span><span class="w">
+  </span><span class="err">Steps:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="err">InputTemplate:</span><span class="w"> </span><span class="err">'</span><span class="w"> </span><span class="p">{{</span><span class="w"> </span><span class="err">input.value</span><span class="w"> </span><span class="p">}}</span><span class="w"> </span><span class="err">'</span><span class="p">,</span><span class="w">
+      </span><span class="err">ModuleContext:</span><span class="w"> </span><span class="err">'</span><span class="p">{</span><span class="nl">"hardcodedResponse"</span><span class="p">:</span><span class="s2">"processed data"</span><span class="p">}</span><span class="err">'</span><span class="p">,</span><span class="w">
+      </span><span class="err">ModuleInputFormat:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="err">ModuleName:</span><span class="w"> </span><span class="err">'example_module'</span><span class="p">,</span><span class="w">
+      </span><span class="err">ModuleOutputFormat:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="err">Name:</span><span class="w"> </span><span class="err">'example_step'</span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="err">Output:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">CallbackEndpoint:</span><span class="w"> </span><span class="err">'http://host.docker.internal:</span><span class="mi">5123</span><span class="err">/'</span><span class="p">,</span><span class="w">
+    </span><span class="err">DataFormat:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="err">Template:</span><span class="w"> </span><span class="err">'</span><span class="p">{</span><span class="nl">"output_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">" {{ example_step }}"</span><span class="w"> </span><span class="p">}</span><span class="err">'</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># yaml</span>
+<span class="na">Creator</span><span class="pi">:</span> <span class="s">testuser</span>
+<span class="na">Name</span><span class="pi">:</span> <span class="s">example_pipeline</span>
+<span class="na">Steps</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">InputTemplate</span><span class="pi">:</span>  <span class="s1">'</span><span class="s">{{</span><span class="nv"> </span><span class="s">input.value</span><span class="nv"> </span><span class="s">}}'</span>  
+  <span class="na">ModuleContext</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"hardcodedResponse":"processed</span><span class="nv"> </span><span class="s">data"}'</span>
+  <span class="na">ModuleInputFormat</span><span class="pi">:</span> <span class="m">2</span>
+  <span class="na">ModuleName</span><span class="pi">:</span> <span class="s">example_module</span>
+  <span class="na">ModuleOutputFormat</span><span class="pi">:</span> <span class="m">2</span>
+  <span class="na">Name</span><span class="pi">:</span> <span class="s">example_step</span>
+<span class="na">Output</span><span class="pi">:</span>
+  <span class="na">CallbackEndpoint</span><span class="pi">:</span> <span class="s">http://host.docker.internal:5123/</span>
+  <span class="na">DataFormat</span><span class="pi">:</span> <span class="m">0</span>
+  <span class="na">Template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"output_data":</span><span class="nv">  </span><span class="s">"{{</span><span class="nv"> </span><span class="s">example_step</span><span class="nv"> </span><span class="s">}}"}"</span> 
+</code></pre></div></div>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Example Tasks&url=/docs/ideas/example-tasks/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fdocs%2Fideas%2Fexample-tasks%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=AireInsights Structure&url=/docs/ai_structure/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fdocs%2Fai_structure%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -211,25 +261,19 @@
 
   
   
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
+    <ul class="uk-pagination uk-margin-top">
+          
+            
+            
+            <li><a class="hvr-back" href="/docs/getting-started/">&larr; Previous</a></li>
+          
+          
+            
+            
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/rabbitmq/">Next &rarr;</a></li>
+          
+    </ul>
+    
 
 
                     <div class="uk-margin-large-top">
@@ -311,45 +355,45 @@
     
 
     
-        <li><a href="/docs/ideas/data-sources/">Data Sources</a></li>
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/rabbitmq/">RabbitMQ</a></li>
         
         
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
     
 
     
@@ -417,7 +461,7 @@
         
           
           
-          <li class=""><a href="/docs/ai_structure/">AireInsights Structure</a></li>
+          <li class="uk-active"><a href="/docs/ai_structure/">AireInsights Structure</a></li>
         
           
           
