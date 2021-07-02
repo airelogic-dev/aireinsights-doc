@@ -6,19 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Data Pipeline | AireInsights Docs</title>
+<title>Getting Started with AireInsights | AireInsights Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Data Pipeline" />
+<meta property="og:title" content="Getting Started with AireInsights" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The getting started guide shows how to create a simple pipeline, this guide is more in depth." />
-<meta property="og:description" content="The getting started guide shows how to create a simple pipeline, this guide is more in depth." />
+<meta name="description" content="What is AireInsights? AireInsights is a data processing framework for data processing pipelines using a low code approach but still allowing the flexibility to add custom processing modules. It uses a data lake which feeds the data processing pipelines. Data is submitted to the data lake and triggers are used to run pipelines using that data. The pipelines are constist of steps which use external modules to process the data. The modules are services implementing a function to process the data." />
+<meta property="og:description" content="What is AireInsights? AireInsights is a data processing framework for data processing pipelines using a low code approach but still allowing the flexibility to add custom processing modules. It uses a data lake which feeds the data processing pipelines. Data is submitted to the data lake and triggers are used to run pipelines using that data. The pipelines are constist of steps which use external modules to process the data. The modules are services implementing a function to process the data." />
 <meta property="og:site_name" content="AireInsights Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-07-02T10:37:03+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Data Pipeline" />
+<meta property="twitter:title" content="Getting Started with AireInsights" />
 <script type="application/ld+json">
-{"description":"The getting started guide shows how to create a simple pipeline, this guide is more in depth.","@type":"BlogPosting","headline":"Data Pipeline","dateModified":"2021-07-02T10:37:03+00:00","datePublished":"2021-07-02T10:37:03+00:00","url":"/docs/concepts/pipeline/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/concepts/pipeline/"},"@context":"https://schema.org"}</script>
+{"description":"What is AireInsights? AireInsights is a data processing framework for data processing pipelines using a low code approach but still allowing the flexibility to add custom processing modules. It uses a data lake which feeds the data processing pipelines. Data is submitted to the data lake and triggers are used to run pipelines using that data. The pipelines are constist of steps which use external modules to process the data. The modules are services implementing a function to process the data.","@type":"BlogPosting","headline":"Getting Started with AireInsights","dateModified":"2021-07-02T10:37:03+00:00","datePublished":"2021-07-02T10:37:03+00:00","url":"/docs/getting-started/what-is/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/getting-started/what-is/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="/assets/posts/"/>
@@ -117,7 +117,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/getting-started/what-is/">Getting Started with AireInsights</a></li>
+                      <li class="uk-active"><a href="/docs/getting-started/what-is/">Getting Started with AireInsights</a></li>
                     
                       
                       
@@ -130,7 +130,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
+                      <li class=""><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
                     
                       
                       
@@ -179,9 +179,9 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Data Pipeline</h1>
+                    <h1 class="uk-article-title">Getting Started with AireInsights</h1>
 
-                    
+                    <p class="subtitle uk-text-lead uk-text-muted">Become aquainted with AireInsights</p>
 
                     <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
                         
@@ -198,85 +198,14 @@
                     </div>
 
                     <div class="article-content">
-                        <p>The getting started guide shows how to create a simple pipeline, this guide is more in depth.</p>
-
-<p>The schematic below illustrates a possible pipeline configuration.
-Steps A-F represent independent stages at which a task occurs. The tasks can include 
-filtering data, calling modules or external services. Each step calls out to a module, an independet service which does the data processing.</p>
-
-<p><img src="/assets/img/pipeline_detail.png" alt="pipelines" /></p>
-
-<h2 id="syntax">Syntax</h2>
-
-<p><strong><em>YAML</em></strong></p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Name</span><span class="pi">:</span> <span class="s">String</span>
-<span class="na">InputFormat</span><span class="pi">:</span> <span class="s">DataFormat</span>
-<span class="na">ExecutionTimeout</span><span class="pi">:</span> <span class="s">Integer</span>
-<span class="na">Steps</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">Step</span>
-<span class="na">Output</span><span class="pi">:</span>
-  <span class="na">CallbackEndpoint</span><span class="pi">:</span> <span class="s">Url</span>
-  <span class="na">DataFormat</span><span class="pi">:</span> <span class="s">DataFormat</span>
-  <span class="na">Template</span><span class="pi">:</span> <span class="s">Liquid</span>
-</code></pre></div></div>
-
-<p><strong><em>JSON</em></strong></p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="err">String</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"InputFormat"</span><span class="p">:</span><span class="w"> </span><span class="err">DataFormat</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ExecutionTimeout"</span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"Steps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">Step</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"Output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"CallbackEndpoint"</span><span class="p">:</span><span class="w"> </span><span class="err">Url</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"DataFormat"</span><span class="p">:</span><span class="w"> </span><span class="err">DataFormat</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"Template"</span><span class="p">:</span><span class="w"> </span><span class="err">Liquid</span><span class="w">
-  </span><span class="p">}</span><span class="w"> 
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h2 id="properties">Properties</h2>
-<h3 id="name">Name</h3>
-<p>The name of the pipeline has to be unique (accross one user) and is used to reference the pipeline in triggers.<br />
-<em>Required</em>: Yes<br />
-<em>Type:</em> String</p>
-
-<h3 id="inputformat">InputFormat</h3>
-<p>The data format of the pipeline’s input data, this way AireInsights knowns how to interpret the input string so it can map it for the processing steps.<br />
-<em>Required:</em> Yes<br />
-<em>Type:</em> DataFormat<br />
-<em>Options:</em> <code class="language-plaintext highlighter-rouge">Unstructured</code> (0), <code class="language-plaintext highlighter-rouge">Json</code> (1), <code class="language-plaintext highlighter-rouge">Xml</code> (2)</p>
-
-<h3 id="executiontimeout">ExecutionTimeout</h3>
-<p>Data processing can be slow at times, this parameter makes sure it doe snot take too long. It specifies the pipeline timeout in milliseconds.<br />
-<em>Required:</em> No <br />
-<em>Type:</em> Integer<br />
-<em>Default:</em> 5000 ms</p>
-
-<h3 id="steps">Steps</h3>
-<p>The data processing in AireInsights happens in modules, small services that are connected to the core AireInsights serivces. To build a custom module one of the SDKs can be used. In the pipeline definition a module is referenced and configured in a step.<br />
-<em>Required:</em> No <br />
-<em>Type:</em> List of <a href="/docs/concepts/step">Step</a><br />
-<em>Default:</em> Empty list</p>
-
-<h3 id="outputcallbackendpoint">Output/CallbackEndpoint</h3>
-<p>Endpoint where the pipeline output should be sent to.<br />
-<em>Required:</em> Yes <br />
-<em>Type:</em> Url</p>
-
-<h3 id="outputdataformat">Output/DataFormat</h3>
-<p>The data format of the pipeline’s output data, this is used fo the <code class="language-plaintext highlighter-rouge">Content-Type</code> header when calling the <code class="language-plaintext highlighter-rouge">CallbackEndpoint</code>.<br />
-<em>Required:</em> Yes <br />
-<em>Type:</em> DataFormat<br />
-<em>Options:</em> <code class="language-plaintext highlighter-rouge">Unstructured</code> (0), <code class="language-plaintext highlighter-rouge">Json</code> (1), <code class="language-plaintext highlighter-rouge">Xml</code> (2)</p>
-
-<h3 id="outputtemplate">Output/Template</h3>
-<p>Specifies the output of the pipeline using a Liquid template. All step outputs are available as a variable with the name of the step.<br />
-<em>Required:</em> Yes <br />
-<em>Type:</em> Liquid</p>
+                        <h2 id="what-is-aireinsights">What is AireInsights?</h2>
+<p>AireInsights is a data processing framework for data processing pipelines using a low code approach but still allowing the flexibility to add custom processing modules.
+It uses a data lake which feeds the data processing pipelines. 
+Data is submitted to the data lake and triggers are used to run pipelines using that data. The pipelines are constist of steps which use external modules to process the data. The modules are services implementing a function to process the data.</p>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Data Pipeline&url=/docs/concepts/pipeline/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fdocs%2Fconcepts%2Fpipeline%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Getting Started with AireInsights&url=/docs/getting-started/what-is/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fdocs%2Fgetting-started%2Fwhat-is%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -288,22 +217,14 @@ filtering data, calling modules or external services. Each step calls out to a m
 
   
   
-
-  
-  
-
-  
-  
     <ul class="uk-pagination uk-margin-top">
           
-            
-            
-            <li><a class="hvr-back" href="/docs/getting-started/first-pipeline/">&larr; Previous</a></li>
+
           
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/concepts/step/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/getting-started/first-pipeline/">Next &rarr;</a></li>
           
     </ul>
     
@@ -343,53 +264,45 @@ filtering data, calling modules or external services. Each step calls out to a m
     
 
     
-        <li><a href="/docs/concepts/data-lake/">Data Lake</a></li>
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/getting-started/first-pipeline/">Setting up the first data pipeline</a></li>
         
         
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/concepts/step/">Processing Step</a></li>
-        
-        
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
-        
-        
-    
-
-    
-
-    
-    
-
-    
-
     
 
     
@@ -462,7 +375,7 @@ filtering data, calling modules or external services. Each step calls out to a m
         
           
           
-          <li class=""><a href="/docs/getting-started/what-is/">Getting Started with AireInsights</a></li>
+          <li class="uk-active"><a href="/docs/getting-started/what-is/">Getting Started with AireInsights</a></li>
         
           
           
@@ -475,7 +388,7 @@ filtering data, calling modules or external services. Each step calls out to a m
         
           
           
-          <li class="uk-active"><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
+          <li class=""><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
         
           
           
