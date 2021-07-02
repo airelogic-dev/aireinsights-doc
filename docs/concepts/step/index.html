@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Processing Step | AireInsights Docs</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Processing Step" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The getting started guide shows how to create a simple pipeline, this guide is more in depth." />
+<meta property="og:description" content="The getting started guide shows how to create a simple pipeline, this guide is more in depth." />
+<meta property="og:site_name" content="AireInsights Docs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-02T09:38:01+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Processing Step" />
+<script type="application/ld+json">
+{"description":"The getting started guide shows how to create a simple pipeline, this guide is more in depth.","@type":"BlogPosting","headline":"Processing Step","dateModified":"2021-07-02T09:38:01+00:00","datePublished":"2021-07-02T09:38:01+00:00","url":"/docs/concepts/step/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/concepts/step/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="/assets/posts/"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png" >
+  <link rel="alternate" type="application/rss+xml" title="AireInsights Docs" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  
+</head>
+
+    <body>
+    <header class="uk-background-secondary">
+    <div data-uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky" class="uk-sticky uk-sticky-fixed" style="position: fixed; top: 0px; width: 1904px;">
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+    <div data-uk-navbar>
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-item uk-logo uk-visible@m" href="/">AireInsights Docs</a>
+            
+              <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Mini-nav</span></a>
+            
+
+        </div>
+        <div class="uk-navbar-center uk-hidden@m">
+            <a class="uk-navbar-item uk-logo" href="/">AireInsights Docs</a>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav uk-visible@m">
+                
+                    
+                    
+                    
+                        <li><a href="/docs/getting-started" >Getting Started</a></li>
+                    
+                
+                    
+                    
+                    
+                        <li><a href="/changelog/" >Changelog</a></li>
+                    
+                
+                    
+                    
+                    
+                        <li><a href="https://www.airelogic.com/" target="_blank" >About Airelogic</a></li>
+                    
+                
+            </ul>
+
+            
+            <div>
+                <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                        <input id="navbar-search" class="uk-search-input" type="search" placeholder="Search..." autofocus>
+                    </form>
+                    <ul id="navbar-search-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                </div>
+            </div>
+            <script>
+            SimpleJekyllSearch({
+                searchInput: document.getElementById('navbar-search'),
+                resultsContainer: document.getElementById('navbar-search-results'),
+                noResultsText: '<li>No results found</li>',
+                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                json: '/search.json'
+            });
+            </script>
+            
+
+            
+              <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span></a>
+            
+
+
+        </div>
+    </div>
+</div>
+
+        </nav>
+    </div>
+</header>
+
+
+    
+
+    <div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" data-uk-grid>
+
+            <div class="sidebar-fixed-width uk-visible@m">
+                <div class="sidebar-docs uk-position-fixed">
+                    
+                    <h5>Getting Started</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/getting-started/">Getting Started with AireInsights</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Concepts</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/concepts/data-lake/">Data Lake</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
+                    
+                    </ul>
+                    
+                    <h5>Toolkits</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/sdk/python-sdk/">Python SDK</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/sdk/csharp-dotnet-sdk/">C# SDK</a></li>
+                    
+                    </ul>
+                    
+                    <h5>API</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    
+                      
+                      
+                      <li class=""><a href="/docs/api/auth/">Authentication</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/api/endpoints/">Endpoints</a></li>
+                    
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-expand@m">
+
+                <article class="uk-article">
+
+                    <h1 class="uk-article-title">Processing Step</h1>
+
+                    
+
+                    <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom">
+                        
+
+
+
+
+
+<time datetime="2021-07-02T09:38:01+00:00" itemprop="datePublished">
+    
+    Jul 2, 2021
+</time>
+
+                    </div>
+
+                    <div class="article-content">
+                        <p>The getting started guide shows how to create a simple pipeline, this guide is more in depth.</p>
+
+<p>The schematic below illustrates a possible pipeline configuration.
+Steps A-F represent independent stages at which a task occurs. The tasks can include 
+filtering data, calling modules or external services. Each step calls out to a module, an independet service which does the data processing.</p>
+
+<p><img src="/assets/img/pipeline_detail.png" alt="pipelines" /></p>
+
+<h2 id="syntax">Syntax</h2>
+
+<p><strong><em>YAML</em></strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Name</span><span class="pi">:</span> <span class="s">String</span>
+<span class="na">InputFormat</span><span class="pi">:</span> <span class="s">DataFormat</span>
+<span class="na">ExecutionTimeout</span><span class="pi">:</span> <span class="s">Integer</span>
+<span class="na">Steps</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">Step</span>
+<span class="na">Output</span><span class="pi">:</span>
+  <span class="na">CallbackEndpoint</span><span class="pi">:</span> <span class="s">Url</span>
+  <span class="na">DataFormat</span><span class="pi">:</span> <span class="s">DataFormat</span>
+  <span class="na">Template</span><span class="pi">:</span> <span class="s">Liquid</span>
+</code></pre></div></div>
+
+<p><strong><em>JSON</em></strong></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="err">String</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"InputFormat"</span><span class="p">:</span><span class="w"> </span><span class="err">DataFormat</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ExecutionTimeout"</span><span class="p">:</span><span class="w"> </span><span class="err">Integer</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Steps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">Step</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"Output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"CallbackEndpoint"</span><span class="p">:</span><span class="w"> </span><span class="err">Url</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"DataFormat"</span><span class="p">:</span><span class="w"> </span><span class="err">DataFormat</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Template"</span><span class="p">:</span><span class="w"> </span><span class="err">Liquid</span><span class="w">
+  </span><span class="p">}</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="properties">Properties</h2>
+<h3 id="name">Name</h3>
+<p>The name of the pipeline has to be unique (accross one user) and is used to reference the pipeline in triggers.<br />
+<em>Required</em>: Yes<br />
+<em>Type:</em> String</p>
+
+<h3 id="inputformat">InputFormat</h3>
+<p>The data format of the pipeline’s input data, this way AireInsights knowns how to interpret the input string so it can map it for the processing steps.<br />
+<em>Required:</em> Yes <br />
+<em>Type:</em> DataFormat
+<em>Options:</em> <code class="language-plaintext highlighter-rouge">Unstructured</code> (0), <code class="language-plaintext highlighter-rouge">Json</code> (1), <code class="language-plaintext highlighter-rouge">Xml</code> (2)</p>
+
+<h3 id="executiontimeout">ExecutionTimeout</h3>
+<p>Data processing can be slow at times, this parameter makes sure it doe snot take too long. It specifies the pipeline timeout in milliseconds.<br />
+<em>Required:</em> No <br />
+<em>Type:</em> Integer<br />
+<em>Default:</em> 5000 ms</p>
+
+<h3 id="steps">Steps</h3>
+<p>The data processing in AireInsights happens in modules, small services that are connected to the core AireInsights serivces. To build a custom module one of the SDKs can be used. In the pipeline definition a module is referenced and configured in a step.<br />
+<em>Required:</em> No <br />
+<em>Type:</em> List of <a href="">Step</a><br />
+<em>Default:</em> Empty list</p>
+
+<p><strong><em>yaml</em></strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Steps</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">Name</span><span class="pi">:</span> <span class="s">example_step</span>
+  <span class="na">InputTemplate</span><span class="pi">:</span>  <span class="s1">'</span><span class="s">{{</span><span class="nv"> </span><span class="s">input.value</span><span class="nv"> </span><span class="s">}}'</span>  
+  <span class="na">ModuleContext</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"hardcodedResponse":"processed</span><span class="nv"> </span><span class="s">data"}'</span>
+  <span class="na">ModuleName</span><span class="pi">:</span> <span class="s">example_analytics_module</span>
+  <span class="na">ModuleInputFormat</span><span class="pi">:</span> <span class="s">Unstructured</span>
+  <span class="na">ModuleOutputFormat</span><span class="pi">:</span> <span class="s">Xml</span>
+</code></pre></div></div>
+
+<p><strong><em>json</em></strong></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"steps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_step"</span><span class="w">
+    </span><span class="nl">"inputTemplate"</span><span class="p">:</span><span class="w">  </span><span class="s2">"{{ input.value }}"</span><span class="w">  
+    </span><span class="nl">"moduleContext"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{</span><span class="se">\"</span><span class="s2">hardcodedResponse</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">processed data</span><span class="se">\"</span><span class="s2">}"</span><span class="w">
+    </span><span class="nl">"moduleName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_analytics_module"</span><span class="w">
+    </span><span class="nl">"moduleInputFormat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="nl">"moduleOutputFormat"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="outputcallbackendpoint">Output/CallbackEndpoint</h3>
+<p>Endpoint where the pipeline output should be sent to
+<em>Required:</em> Yes <br />
+<em>Type:</em> Url</p>
+
+<h3 id="outputdataformat">Output/DataFormat</h3>
+<p>The data format of the pipeline’s output data, this is used fo the <code class="language-plaintext highlighter-rouge">Content-Type</code> header when calling the <code class="language-plaintext highlighter-rouge">CallbackEndpoint</code>.<br />
+<em>Required:</em> Yes <br />
+<em>Type:</em> DataFormat<br />
+<em>Options:</em> <code class="language-plaintext highlighter-rouge">Unstructured</code> (0), <code class="language-plaintext highlighter-rouge">Json</code> (1), <code class="language-plaintext highlighter-rouge">Xml</code> (2)</p>
+
+<h3 id="outputtemplate">Output/Template</h3>
+<p>The output section of the pipeline definition specifies how the output of the data should look like using the outputs of the different steps and where it should be sent to.
+<em>Required:</em> Yes <br />
+<em>Type:</em> Liquid</p>
+
+                        <div class="share uk-text-center">
+    <a href="https://twitter.com/intent/tweet?text=Processing Step&url=/docs/concepts/step/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fdocs%2Fconcepts%2Fstep%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+</div>
+
+                    </div>
+
+                    <hr class="uk-margin-medium">
+
+                    
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+                    <div class="uk-margin-large-top">
+    <h3>Related Articles</h3>
+
+    
+    
+    
+
+    <ul class="uk-list">
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/concepts/data-lake/">Data Lake</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+    </ul>
+</div>
+
+
+                    
+                </article>
+
+                <div>
+                    <div class="uk-section uk-text-center uk-link-muted">
+    <div class="uk-margin-medium uk-text-small">
+        <div></div>
+        <div></div> 
+    </div> 
+</div>
+
+                </div>
+
+                <script>
+                    // Table of contents scroll to
+                    UIkit.scroll('#markdown-toc a', {
+                        duration: 400,
+                        offset: 120
+                    });
+                </script>
+
+            </div>
+
+    </div>
+</div>
+
+
+    <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+        <h5 class="uk-margin-top">Getting Started</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/getting-started/">Getting Started with AireInsights</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Concepts</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/concepts/data-lake/">Data Lake</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">Toolkits</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/sdk/python-sdk/">Python SDK</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/sdk/csharp-dotnet-sdk/">C# SDK</a></li>
+        
+        </ul>
+        
+        <h5 class="uk-margin-top">API</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
+        
+          
+          
+          <li class=""><a href="/docs/api/auth/">Authentication</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/api/endpoints/">Endpoints</a></li>
+        
+        </ul>
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        <ul class="uk-nav uk-nav-default">
+            <li><a class="uk-logo uk-margin-small-bottom" href="/">AireInsights Docs</a></li>
+            
+                
+            <li><a href="/docs/getting-started" >Getting Started</a></li>
+            
+                
+            <li><a href="/changelog/" >Changelog</a></li>
+            
+                
+            <li><a href="https://www.airelogic.com/" target="_blank" >About Airelogic</a></li>
+            
+        </ul>
+
+        <div class="uk-margin-small-top uk-text-center uk-text-muted uk-link-muted">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+
+    </body>
+
+</html>

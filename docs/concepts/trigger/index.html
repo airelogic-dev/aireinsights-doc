@@ -6,19 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Python SDK | AireInsights Docs</title>
+<title>Pipeline triggers | AireInsights Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Python SDK" />
+<meta property="og:title" content="Pipeline triggers" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The Python SDK allows you to create your own module for AireInsights using python. AireInsights communicates with the modules using a message broker (by defualt this is RabbitMQ). Let’s assume we have a python function that does some fancy data processing called my_processing_function, the following snipped shows how this function can be used to create an AireInsights module." />
-<meta property="og:description" content="The Python SDK allows you to create your own module for AireInsights using python. AireInsights communicates with the modules using a message broker (by defualt this is RabbitMQ). Let’s assume we have a python function that does some fancy data processing called my_processing_function, the following snipped shows how this function can be used to create an AireInsights module." />
+<meta name="description" content="Trigger definition" />
+<meta property="og:description" content="Trigger definition" />
 <meta property="og:site_name" content="AireInsights Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-07-02T09:38:01+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Python SDK" />
+<meta property="twitter:title" content="Pipeline triggers" />
 <script type="application/ld+json">
-{"description":"The Python SDK allows you to create your own module for AireInsights using python. AireInsights communicates with the modules using a message broker (by defualt this is RabbitMQ). Let’s assume we have a python function that does some fancy data processing called my_processing_function, the following snipped shows how this function can be used to create an AireInsights module.","@type":"BlogPosting","headline":"Python SDK","dateModified":"2021-07-02T09:38:01+00:00","datePublished":"2021-07-02T09:38:01+00:00","url":"/docs/sdk/python-sdk/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/sdk/python-sdk/"},"@context":"https://schema.org"}</script>
+{"description":"Trigger definition","@type":"BlogPosting","headline":"Pipeline triggers","dateModified":"2021-07-02T09:38:01+00:00","datePublished":"2021-07-02T09:38:01+00:00","url":"/docs/concepts/trigger/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/concepts/trigger/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="/assets/posts/"/>
@@ -134,7 +134,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
+                      <li class="uk-active"><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
                     
                     </ul>
                     
@@ -143,7 +143,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/sdk/python-sdk/">Python SDK</a></li>
+                      <li class=""><a href="/docs/sdk/python-sdk/">Python SDK</a></li>
                     
                       
                       
@@ -171,7 +171,7 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Python SDK</h1>
+                    <h1 class="uk-article-title">Pipeline triggers</h1>
 
                     
 
@@ -190,35 +190,41 @@
                     </div>
 
                     <div class="article-content">
-                        <p>The Python SDK allows you to create your own module for AireInsights using python. AireInsights communicates with the modules using a message broker (by defualt this is RabbitMQ). Let’s assume we have a python function that does some fancy data processing called <code class="language-plaintext highlighter-rouge">my_processing_function</code>, the following snipped shows how this function can be used to create an AireInsights module.</p>
+                        <h2 id="trigger-definition">Trigger definition</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">aireinsights</span> <span class="kn">import</span> <span class="n">AireInsights</span>
+<h3 id="name-of-the-trigger">Name of the trigger</h3>
+<p>The name has to be unique (accross one user) and is used to reference the trigger to update or delete it.</p>
 
-<span class="kn">from</span> <span class="nn">my_package</span> <span class="kn">import</span> <span class="n">my_processing_function</span>
-
-<span class="n">connection_string</span> <span class="o">=</span> <span class="s">"amqp://user:pass@localhost:5672/aireinsights"</span>
-
-<span class="n">ai</span> <span class="o">=</span> <span class="n">AireInsights</span><span class="p">(</span><span class="n">connection_string</span><span class="p">)</span>
-
-<span class="o">@</span><span class="n">ai</span><span class="p">.</span><span class="n">module</span><span class="p">(</span><span class="s">'demo-module'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">my_module</span><span class="p">(</span><span class="n">step_name</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">my_processing_function</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span> 
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
-    <span class="n">ai</span><span class="p">.</span><span class="n">run</span><span class="p">()</span>
+<p><strong><em>yaml</em></strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Name</span><span class="pi">:</span> <span class="s">example_trigger</span>
 </code></pre></div></div>
+<p><strong><em>json</em></strong></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_trigger"</span><span class="w">
+</span></code></pre></div></div>
 
-<ol>
-  <li>The <code class="language-plaintext highlighter-rouge">connection_string</code> is the url to connect the module to the core AireInsights service. We recommend to pass this in as an environment variable as it includes the password for the AireInsights message broker.</li>
-  <li>The we create an instance of the <code class="language-plaintext highlighter-rouge">AireInsights</code> class</li>
-  <li>We then use the <code class="language-plaintext highlighter-rouge">module()</code> decorator to tell AireInsights about this module and under which name to find it.</li>
-  <li>The function receives the name of the step that calls this module (<code class="language-plaintext highlighter-rouge">step_name</code>), the data sent to the module as a string in the second argument (<code class="language-plaintext highlighter-rouge">body</code>) and the module context (<code class="language-plaintext highlighter-rouge">context</code>). The module context can be defined as part of the step definition in the pipeline and allows to use the same module using a different configuration when called from different steps.
-This function will do all the processing of the data (in our casse it calls the <code class="language-plaintext highlighter-rouge">my_processing_function</code> to do that) and then it returns the module output as a string, in the step definition we can specify as what kind of data format this string should be interpreted as.</li>
-</ol>
+<h3 id="data-collection">Data collection</h3>
+<p>This references the data collection the data should be taken from.</p>
+
+<p><strong><em>yaml</em></strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">DataCollection</span><span class="pi">:</span> <span class="s">my-data</span>
+</code></pre></div></div>
+<p><strong><em>json</em></strong></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"dataCollection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-data"</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="pipeline">Pipeline</h3>
+<p>The pipeline that should be invoked by the trigger.</p>
+
+<p><strong><em>yaml</em></strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Pipeline</span><span class="pi">:</span> <span class="s">my-pipeline</span>
+</code></pre></div></div>
+<p><strong><em>json</em></strong></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"pipeline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-pipeline"</span><span class="w">
+</span></code></pre></div></div>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Python SDK&url=/docs/sdk/python-sdk/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fdocs%2Fsdk%2Fpython-sdk%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Pipeline triggers&url=/docs/concepts/trigger/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fdocs%2Fconcepts%2Ftrigger%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -239,19 +245,16 @@ This function will do all the processing of the data (in our casse it calls the 
 
   
   
-
-  
-  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/concepts/trigger/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/concepts/data-lake/">&larr; Previous</a></li>
           
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/sdk/csharp-dotnet-sdk/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/sdk/python-sdk/">Next &rarr;</a></li>
           
     </ul>
     
@@ -273,7 +276,25 @@ This function will do all the processing of the data (in our casse it calls the 
     
 
     
-        <li><a href="/docs/api/auth/">Authentication</a></li>
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/concepts/data-lake/">Data Lake</a></li>
         
         
     
@@ -286,7 +307,20 @@ This function will do all the processing of the data (in our casse it calls the 
     
 
     
-        <li><a href="/docs/api/endpoints/">Endpoints</a></li>
+        <li><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
+        
+        
+    
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/concepts/step/">Processing Step</a></li>
         
         
     
@@ -316,37 +350,6 @@ This function will do all the processing of the data (in our casse it calls the 
 
     
 
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/sdk/csharp-dotnet-sdk/">C# SDK</a></li>
-        
-        
     
 
     
@@ -418,7 +421,7 @@ This function will do all the processing of the data (in our casse it calls the 
         
           
           
-          <li class=""><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
+          <li class="uk-active"><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
         
         </ul>
         
@@ -427,7 +430,7 @@ This function will do all the processing of the data (in our casse it calls the 
         
           
           
-          <li class="uk-active"><a href="/docs/sdk/python-sdk/">Python SDK</a></li>
+          <li class=""><a href="/docs/sdk/python-sdk/">Python SDK</a></li>
         
           
           

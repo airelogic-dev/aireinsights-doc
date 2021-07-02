@@ -9,17 +9,16 @@
 <title>Getting Started with AireInsights | AireInsights Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Getting Started with AireInsights" />
-<meta name="author" content="Anton Goetzee-Barral" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="What is AireInsights? AireInsights is a Data Enrichment tool which can be used independently of the Aire Logic. Data Enrichment involves extracting data from one or more sources, which in combination with analytics tools provides useful insights." />
-<meta property="og:description" content="What is AireInsights? AireInsights is a Data Enrichment tool which can be used independently of the Aire Logic. Data Enrichment involves extracting data from one or more sources, which in combination with analytics tools provides useful insights." />
+<meta name="description" content="What is AireInsights? AireInsights is a data processing framework for data processing pipelines using a low code approach but still allowing the flexibility to add custom processing modules. It uses a data lake which feeds the data processing pipelines. Data is submitted to the data lake and triggers are used to run pipelines using that data. The pipelines are constist of steps which use external modules to process the data. The modules are services implementing a function to process the data." />
+<meta property="og:description" content="What is AireInsights? AireInsights is a data processing framework for data processing pipelines using a low code approach but still allowing the flexibility to add custom processing modules. It uses a data lake which feeds the data processing pipelines. Data is submitted to the data lake and triggers are used to run pipelines using that data. The pipelines are constist of steps which use external modules to process the data. The modules are services implementing a function to process the data." />
 <meta property="og:site_name" content="AireInsights Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-05-24T10:06:42+00:00" />
+<meta property="article:published_time" content="2021-07-02T09:38:01+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Getting Started with AireInsights" />
 <script type="application/ld+json">
-{"description":"What is AireInsights? AireInsights is a Data Enrichment tool which can be used independently of the Aire Logic. Data Enrichment involves extracting data from one or more sources, which in combination with analytics tools provides useful insights.","@type":"BlogPosting","headline":"Getting Started with AireInsights","dateModified":"2021-05-24T10:06:42+00:00","datePublished":"2021-05-24T10:06:42+00:00","url":"/docs/getting-started/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/getting-started/"},"author":{"@type":"Person","name":"Anton Goetzee-Barral"},"@context":"https://schema.org"}</script>
+{"description":"What is AireInsights? AireInsights is a data processing framework for data processing pipelines using a low code approach but still allowing the flexibility to add custom processing modules. It uses a data lake which feeds the data processing pipelines. Data is submitted to the data lake and triggers are used to run pipelines using that data. The pipelines are constist of steps which use external modules to process the data. The modules are services implementing a function to process the data.","@type":"BlogPosting","headline":"Getting Started with AireInsights","dateModified":"2021-07-02T09:38:01+00:00","datePublished":"2021-07-02T09:38:01+00:00","url":"/docs/getting-started/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/getting-started/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="/assets/posts/"/>
@@ -48,12 +47,6 @@
         </div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav uk-visible@m">
-                
-                    
-                    
-                    
-                        <li><a href="/news/" >News</a></li>
-                    
                 
                     
                     
@@ -126,13 +119,22 @@
                       
                       <li class="uk-active"><a href="/docs/getting-started/">Getting Started with AireInsights</a></li>
                     
-                      
-                      
-                      <li class=""><a href="/docs/ai_structure/">AireInsights Structure</a></li>
+                    </ul>
+                    
+                    <h5>Concepts</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
                     
                       
                       
-                      <li class=""><a href="/docs/faq/">FAQ</a></li>
+                      <li class=""><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/concepts/data-lake/">Data Lake</a></li>
+                    
+                      
+                      
+                      <li class=""><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
                     
                     </ul>
                     
@@ -154,11 +156,11 @@
                     
                       
                       
-                      <li class=""><a href="/docs/api-guide/">API Quick Start</a></li>
+                      <li class=""><a href="/docs/api/auth/">Authentication</a></li>
                     
                       
                       
-                      <li class=""><a href="/docs/endpoints/">Endpoints</a></li>
+                      <li class=""><a href="/docs/api/endpoints/">Endpoints</a></li>
                     
                     </ul>
                     
@@ -180,32 +182,64 @@
 
 
 
-<time datetime="2021-05-24T10:06:42+00:00" itemprop="datePublished">
+<time datetime="2021-07-02T09:38:01+00:00" itemprop="datePublished">
     
-    May 24, 2021
+    Jul 2, 2021
 </time>
 
                     </div>
 
                     <div class="article-content">
                         <h2 id="what-is-aireinsights">What is AireInsights?</h2>
-<p>AireInsights is a Data Enrichment tool which can be used independently of the Aire Logic.<br />
-Data Enrichment involves extracting data from one or more sources, which in
-combination with analytics tools provides useful insights.</p>
+<p>AireInsights is a data processing framework for data processing pipelines using a low code approach but still allowing the flexibility to add custom processing modules.
+It uses a data lake which feeds the data processing pipelines. 
+Data is submitted to the data lake and triggers are used to run pipelines using that data. The pipelines are constist of steps which use external modules to process the data. The modules are services implementing a function to process the data.</p>
 
-<h2 id="some-useful-terms">Some useful terms</h2>
-<ul>
-  <li><a href="/docs/ai_structure/">Pipeline</a>: A software process comprised of steps and callable modules</li>
-  <li>Step:  A single process within the pipline configured to perform tasks, incuding calling modules</li>
-  <li>Module: A function called in a step which may take use-case data input and returns and output</li>
-</ul>
+<h2 id="defining-a-pipeline">Defining a pipeline</h2>
+<p>Every pipeline needs a unique name. This is how it is referenced in triggers.</p>
 
-<h2 id="modules-in-development">Modules in Development</h2>
-<ul>
-  <li><a href="/docs/modules/module-bespoke-spellchecker/">Bespoke Spellchecker</a></li>
-  <li><a href="/docs/modules/module-number-extraction/">Number Extractor</a></li>
-</ul>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Name</span><span class="pi">:</span> <span class="s">my-first-pipeline</span>
+<span class="na">InputFormat</span><span class="pi">:</span> <span class="s">Xml</span>
+</code></pre></div></div>
 
+<p>Our pipeline needs at least one step, in this example we make use of the fictional module called <code class="language-plaintext highlighter-rouge">demo-module</code>. Each step also needs a name, this is how it it referenced in input templates for other steps. The <code class="language-plaintext highlighter-rouge">InputTemplate</code> uses the <a href="https://shopify.github.io/liquid/">Liquid</a> templating language to map the input data for this step, which will then be sent to the module. Because the data is stored internally as a string we need to tell AireInsights what the input and output formats of this module are so it can correctly interpret and map it between steps.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+<span class="na">Steps</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">Name</span><span class="pi">:</span> <span class="s">demo-step</span>
+    <span class="na">InputTemplate</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{{</span><span class="nv"> </span><span class="s">input.foo</span><span class="nv"> </span><span class="s">}}'</span> <span class="c1"># the pipeline input data is accessed through the variable called input </span>
+    <span class="na">ModuleName</span><span class="pi">:</span> <span class="s">demo-module</span>
+    <span class="na">ModuleInputFormat</span><span class="pi">:</span> <span class="s">Unstructured</span>
+    <span class="na">ModuleOutputFormat</span><span class="pi">:</span> <span class="s">Json</span>
+
+</code></pre></div></div>
+
+<p>The final part of our minimal pipeline definition is the output config. Here we specify, using a Liquid template, how the output of the different steps should be combined to the output of the pipeline. The output data of our <code class="language-plaintext highlighter-rouge">demo-step</code> step is referenced using a variable with the same name. <code class="language-plaintext highlighter-rouge">DataFormat</code> specifies the dataformat of the output so it can use the correct <code class="language-plaintext highlighter-rouge">Content-Type</code> headers. And finally we specify the callback url to tell AireInsights where to send the data to. Because data processing can be quite slow sometimes AireInsights pipelines are designed to run as an asynchronous process.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">...</span>
+<span class="na">Output</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">Template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"foo":</span><span class="nv"> </span><span class="s">"{{</span><span class="nv"> </span><span class="s">demo-step</span><span class="nv"> </span><span class="s">}}"</span><span class="nv"> </span><span class="s">}'</span>
+    <span class="na">DataFormat</span><span class="pi">:</span> <span class="s">Json</span>
+    <span class="na">CallbackEndpoint</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://some-url.com/callback'</span>
+ 
+</code></pre></div></div>
+
+<h2 id="defining-a-trigger">Defining a trigger</h2>
+<p>Triggers is how data pipelines are invoked. A <code class="language-plaintext highlighter-rouge">NewDataTrigger</code> trigger invokes a pipeline every time data is added to the data collection in the data lake specified in <code class="language-plaintext highlighter-rouge">DataCollection</code>.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Name</span><span class="pi">:</span> <span class="s">demo-trigger</span>
+<span class="na">DataCollection</span><span class="pi">:</span> <span class="s">demo-data</span>
+<span class="na">Pipeline</span><span class="pi">:</span> <span class="s">my-first-pipeline</span>
+</code></pre></div></div>
+
+<h2 id="submitting-data-to-the-data-lake">Submitting data to the data lake</h2>
+<p>Data in the data lake is organised in data collections, where all the data in one collection should be of the same format and structure, so it can be treated the same when sent to a pipeline.
+We can submit new data to a data collection posting the data using this endpoint:</p>
+
+<p><em>Route:</em> POST <code class="language-plaintext highlighter-rouge">/{username}/Data/demo-data</code><br />
+<em>Header:</em> <code class="language-plaintext highlighter-rouge">Content-Type: application/xml</code><br />
+<em>Payload:</em> <code class="language-plaintext highlighter-rouge">&lt;xml&gt;&lt;foo&gt;bar&lt;/foo&gt;&lt;/xml&gt;</code></p>
+
+<p>By doing this, the trigger will have invoked the pipeline with this newly submitted data item. And after processing it will have sent the output to the specified callback.</p>
 
                         <div class="share uk-text-center">
     <a href="https://twitter.com/intent/tweet?text=Getting Started with AireInsights&url=/docs/getting-started/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
@@ -228,7 +262,7 @@ combination with analytics tools provides useful insights.</p>
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/ai_structure/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/concepts/pipeline/">Next &rarr;</a></li>
           
     </ul>
     
@@ -258,59 +292,6 @@ combination with analytics tools provides useful insights.</p>
 
     
 
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/faq/">FAQ</a></li>
-        
-        
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/ideas/best-practices/">Best Practices</a></li>
-        
-        
     
 
     
@@ -421,13 +402,22 @@ combination with analytics tools provides useful insights.</p>
           
           <li class="uk-active"><a href="/docs/getting-started/">Getting Started with AireInsights</a></li>
         
-          
-          
-          <li class=""><a href="/docs/ai_structure/">AireInsights Structure</a></li>
+        </ul>
+        
+        <h5 class="uk-margin-top">Concepts</h5>
+        <ul class="uk-nav uk-nav-default doc-nav">
         
           
           
-          <li class=""><a href="/docs/faq/">FAQ</a></li>
+          <li class=""><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/concepts/data-lake/">Data Lake</a></li>
+        
+          
+          
+          <li class=""><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
         
         </ul>
         
@@ -449,11 +439,11 @@ combination with analytics tools provides useful insights.</p>
         
           
           
-          <li class=""><a href="/docs/api-guide/">API Quick Start</a></li>
+          <li class=""><a href="/docs/api/auth/">Authentication</a></li>
         
           
           
-          <li class=""><a href="/docs/endpoints/">Endpoints</a></li>
+          <li class=""><a href="/docs/api/endpoints/">Endpoints</a></li>
         
         </ul>
         
@@ -469,9 +459,6 @@ combination with analytics tools provides useful insights.</p>
 
         <ul class="uk-nav uk-nav-default">
             <li><a class="uk-logo uk-margin-small-bottom" href="/">AireInsights Docs</a></li>
-            
-                
-            <li><a href="/news/" >News</a></li>
             
                 
             <li><a href="/docs/getting-started" >Getting Started</a></li>

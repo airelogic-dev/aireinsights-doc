@@ -1,35 +1,51 @@
 [
   
     {
-      "title"    : "AireInsights Structure",
-      "category" : "",
-      "tags"     : "description,, guide",
-      "url"      : "/docs/ai_structure/",
-      "date"     : "2021-05-24 10:06:42 +0000"
-    } ,
-  
-    {
-      "title"    : "API Quick Start",
+      "title"    : "Authentication",
       "category" : "",
       "tags"     : "guides,, advanced",
-      "url"      : "/docs/api-guide/",
-      "date"     : "2021-05-24 10:06:42 +0000"
+      "url"      : "/docs/api/auth/",
+      "date"     : "2021-07-02 09:38:01 +0000"
     } ,
   
     {
       "title"    : "Endpoints",
       "category" : "",
       "tags"     : "guides,, advanced",
-      "url"      : "/docs/endpoints/",
-      "date"     : "2021-05-24 10:06:42 +0000"
+      "url"      : "/docs/api/endpoints/",
+      "date"     : "2021-07-02 09:38:01 +0000"
     } ,
   
     {
-      "title"    : "FAQ",
+      "title"    : "Data Lake",
       "category" : "",
-      "tags"     : "featured,, guides",
-      "url"      : "/docs/faq/",
-      "date"     : "2021-05-24 10:06:42 +0000"
+      "tags"     : "description,, guide",
+      "url"      : "/docs/concepts/data-lake/",
+      "date"     : "2021-07-02 09:38:01 +0000"
+    } ,
+  
+    {
+      "title"    : "Data Pipeline",
+      "category" : "",
+      "tags"     : "description,, guide",
+      "url"      : "/docs/concepts/pipeline/",
+      "date"     : "2021-07-02 09:38:01 +0000"
+    } ,
+  
+    {
+      "title"    : "Processing Step",
+      "category" : "",
+      "tags"     : "description,, guide",
+      "url"      : "/docs/concepts/step/",
+      "date"     : "2021-07-02 09:38:01 +0000"
+    } ,
+  
+    {
+      "title"    : "Pipeline triggers",
+      "category" : "",
+      "tags"     : "description,, guide",
+      "url"      : "/docs/concepts/trigger/",
+      "date"     : "2021-07-02 09:38:01 +0000"
     } ,
   
     {
@@ -37,63 +53,7 @@
       "category" : "",
       "tags"     : "featured,, guides",
       "url"      : "/docs/getting-started/",
-      "date"     : "2021-05-24 10:06:42 +0000"
-    } ,
-  
-    {
-      "title"    : "Pushing AireInsights to the limit",
-      "category" : "",
-      "tags"     : "guides,, advanced",
-      "url"      : "/docs/ideas/advanced-topics/",
-      "date"     : "2021-05-24 10:06:42 +0000"
-    } ,
-  
-    {
-      "title"    : "Best Practices",
-      "category" : "",
-      "tags"     : "guides",
-      "url"      : "/docs/ideas/best-practices/",
-      "date"     : "2021-05-24 10:06:42 +0000"
-    } ,
-  
-    {
-      "title"    : "Data Sources",
-      "category" : "",
-      "tags"     : "resources",
-      "url"      : "/docs/ideas/data-sources/",
-      "date"     : "2021-05-24 10:06:42 +0000"
-    } ,
-  
-    {
-      "title"    : "Example Tasks",
-      "category" : "",
-      "tags"     : "resources",
-      "url"      : "/docs/ideas/example-tasks/",
-      "date"     : "2021-05-24 10:06:42 +0000"
-    } ,
-  
-    {
-      "title"    : "RabbitMQ",
-      "category" : "",
-      "tags"     : "description,, guide",
-      "url"      : "/docs/ideas/rabbitmq/",
-      "date"     : "2021-05-24 10:06:42 +0000"
-    } ,
-  
-    {
-      "title"    : "Bespoke Spellchecker",
-      "category" : "",
-      "tags"     : "modules",
-      "url"      : "/docs/modules/module-bespoke-spellchecker/",
-      "date"     : "2021-05-24 10:06:42 +0000"
-    } ,
-  
-    {
-      "title"    : "Number Extraction",
-      "category" : "",
-      "tags"     : "modules",
-      "url"      : "/docs/modules/module-number-extraction/",
-      "date"     : "2021-05-24 10:06:42 +0000"
+      "date"     : "2021-07-02 09:38:01 +0000"
     } ,
   
     {
@@ -101,7 +61,7 @@
       "category" : "",
       "tags"     : "guides,, advanced",
       "url"      : "/docs/sdk/csharp-dotnet-sdk/",
-      "date"     : "2021-05-24 10:06:42 +0000"
+      "date"     : "2021-07-02 09:38:01 +0000"
     } ,
   
     {
@@ -109,7 +69,7 @@
       "category" : "",
       "tags"     : "guides,, advanced",
       "url"      : "/docs/sdk/python-sdk/",
-      "date"     : "2021-05-24 10:06:42 +0000"
+      "date"     : "2021-07-02 09:38:01 +0000"
     } 
   
 ]
