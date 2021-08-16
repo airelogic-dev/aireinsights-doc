@@ -10,15 +10,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Setting up the first data pipeline" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Defining a pipeline Every pipeline needs a unique name. This is how it is referenced in triggers." />
-<meta property="og:description" content="Defining a pipeline Every pipeline needs a unique name. This is how it is referenced in triggers." />
+<meta name="description" content="Defining a pipeline Every pipeline needs a unique name. This is how it is referenced in triggers. The pipeline can have multiple inputs which each get a name and a data format." />
+<meta property="og:description" content="Defining a pipeline Every pipeline needs a unique name. This is how it is referenced in triggers. The pipeline can have multiple inputs which each get a name and a data format." />
 <meta property="og:site_name" content="AireInsights Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-07-02T14:02:41+00:00" />
+<meta property="article:published_time" content="2021-08-16T15:22:25+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Setting up the first data pipeline" />
 <script type="application/ld+json">
-{"description":"Defining a pipeline Every pipeline needs a unique name. This is how it is referenced in triggers.","@type":"BlogPosting","headline":"Setting up the first data pipeline","dateModified":"2021-07-02T14:02:41+00:00","datePublished":"2021-07-02T14:02:41+00:00","url":"/docs/getting-started/first-pipeline/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/getting-started/first-pipeline/"},"@context":"https://schema.org"}</script>
+{"description":"Defining a pipeline Every pipeline needs a unique name. This is how it is referenced in triggers. The pipeline can have multiple inputs which each get a name and a data format.","@type":"BlogPosting","headline":"Setting up the first data pipeline","dateModified":"2021-08-16T15:22:25+00:00","datePublished":"2021-08-16T15:22:25+00:00","url":"/docs/getting-started/first-pipeline/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/getting-started/first-pipeline/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="/assets/posts/"/>
@@ -190,19 +190,20 @@
 
 
 
-<time datetime="2021-07-02T14:02:41+00:00" itemprop="datePublished">
+<time datetime="2021-08-16T15:22:25+00:00" itemprop="datePublished">
     
-    Jul 2, 2021
+    Aug 16, 2021
 </time>
 
                     </div>
 
                     <div class="article-content">
                         <h2 id="defining-a-pipeline">Defining a pipeline</h2>
-<p>Every pipeline needs a unique name. This is how it is referenced in triggers.</p>
+<p>Every pipeline needs a unique name. This is how it is referenced in triggers. The pipeline can have multiple inputs which each get a name and a data format.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Name</span><span class="pi">:</span> <span class="s">my-first-pipeline</span>
-<span class="na">InputFormat</span><span class="pi">:</span> <span class="s">Xml</span>
+<span class="na">Inputs</span><span class="pi">:</span>
+  <span class="na">input</span><span class="pi">:</span> <span class="s">Xml</span>
 </code></pre></div></div>
 
 <p>Our pipeline needs at least one step, in this example we make use of the fictional module called <code class="language-plaintext highlighter-rouge">demo-module</code>. Each step also needs a name, this is how it it referenced in input templates for other steps. The <code class="language-plaintext highlighter-rouge">InputTemplate</code> uses the <a href="https://shopify.github.io/liquid/">Liquid</a> templating language to map the input data for this step, which will then be sent to the module. Because the data is stored internally as a string we need to tell AireInsights what the input and output formats of this module are so it can correctly interpret and map it between steps.</p>
@@ -210,14 +211,14 @@
 <span class="nn">...</span>
 <span class="na">Steps</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">Name</span><span class="pi">:</span> <span class="s">demo-step</span>
-    <span class="na">InputTemplate</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{{</span><span class="nv"> </span><span class="s">input.foo</span><span class="nv"> </span><span class="s">}}'</span> <span class="c1"># the pipeline input data is accessed through the variable called input </span>
+    <span class="na">InputTemplate</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{{</span><span class="nv"> </span><span class="s">input.foo</span><span class="nv"> </span><span class="s">}}'</span> <span class="c1"># the pipeline input data is accessed through variables named after the inputs specified</span>
     <span class="na">ModuleName</span><span class="pi">:</span> <span class="s">demo-module</span>
-    <span class="na">ModuleInputFormat</span><span class="pi">:</span> <span class="s">Unstructured</span>
+    <span class="na">ModuleInputFormat</span><span class="pi">:</span> <span class="s">Raw</span>
     <span class="na">ModuleOutputFormat</span><span class="pi">:</span> <span class="s">Json</span>
 
 </code></pre></div></div>
 
-<p>The final part of our minimal pipeline definition is the output config. Here we specify, using a Liquid template, how the output of the different steps should be combined to the output of the pipeline. The output data of our <code class="language-plaintext highlighter-rouge">demo-step</code> step is referenced using a variable with the same name. <code class="language-plaintext highlighter-rouge">DataFormat</code> specifies the dataformat of the output so it can use the correct <code class="language-plaintext highlighter-rouge">Content-Type</code> headers. And finally we specify the callback url to tell AireInsights where to send the data to. Because data processing can be quite slow sometimes AireInsights pipelines are designed to run as an asynchronous process.</p>
+<p>The final part of our minimal pipeline definition is the output config. Here we specify, using a Liquid template, how the output of the different steps should be combined to the output of the pipeline. The output data of our <code class="language-plaintext highlighter-rouge">demo-step</code> step is referenced using a variable with the same name. <code class="language-plaintext highlighter-rouge">DataFormat</code> specifies the dataformat of the output so it can use the correct <code class="language-plaintext highlighter-rouge">Content-Type</code> headers. And finally we specify the callback url to tell AireInsights where to send the data to. Because data processing can be quite slow sometimes AireInsights pipelines are designed to run as an asynchronous process. It is also possible to store the processed data back in a data collection instead.</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="nn">...</span>
 <span class="na">Output</span><span class="pi">:</span>
@@ -228,10 +229,14 @@
 </code></pre></div></div>
 
 <h2 id="defining-a-trigger">Defining a trigger</h2>
-<p>Triggers is how data pipelines are invoked. A <code class="language-plaintext highlighter-rouge">NewDataTrigger</code> trigger invokes a pipeline every time data is added to the data collection in the data lake specified in <code class="language-plaintext highlighter-rouge">DataCollection</code>.</p>
+<p>Triggers is how data pipelines are invoked. A <code class="language-plaintext highlighter-rouge">NewDataTrigger</code> trigger invokes a pipeline every time data is added to the data collection in the data lake specified in <code class="language-plaintext highlighter-rouge">DataCollection</code>. The <code class="language-plaintext highlighter-rouge">DataSources</code> wire the data from the data collections to the different inputs of a pipeline. In this most simple example, the trigger send the pipeline the newly added data item.</p>
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Name</span><span class="pi">:</span> <span class="s">demo-trigger</span>
 <span class="na">DataCollection</span><span class="pi">:</span> <span class="s">demo-data</span>
 <span class="na">Pipeline</span><span class="pi">:</span> <span class="s">my-first-pipeline</span>
+<span class="na">DataSources</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">Type</span><span class="pi">:</span> <span class="s">LatestItem</span>
+    <span class="na">DataCollection</span><span class="pi">:</span> <span class="s">demo-data</span>
+    <span class="na">Input</span><span class="pi">:</span> <span class="s">input</span> <span class="c1"># This has to match one of the inputs defined in the pipeline definition</span>
 </code></pre></div></div>
 
 <h2 id="submitting-data-to-the-data-lake">Submitting data to the data lake</h2>
