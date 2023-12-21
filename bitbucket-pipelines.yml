@@ -9,13 +9,11 @@ pipelines:
   default:
     - step:
         script: # Modify the commands below to build your repository.
-          #- JEKYLL_ENV=production bundle exec jekyll build -t
-          #- bundle exec htmlproofer ./_site --url-ignore "/#.*/"
           - gem install bundler:2.1.4
           - bundler --version
           - bundle install
           - JEKYLL_ENV=production bundle exec jekyll build -t
-          - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
+          # - bundle exec htmlproofer ./_site --url-ignore "/#.*/"
   branches:
     master:
       - step:

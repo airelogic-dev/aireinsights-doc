@@ -6,19 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Authentication | AireInsights Docs</title>
+<title>Pipeline failures | AireInsights Docs</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Authentication" />
+<meta property="og:title" content="Pipeline failures" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Aireinsights uses API key authentication." />
-<meta property="og:description" content="Aireinsights uses API key authentication." />
+<meta name="description" content="If a pipeline fails whilst running, a FailedPipelineContext will be generated. This contains details of the failure." />
+<meta property="og:description" content="If a pipeline fails whilst running, a FailedPipelineContext will be generated. This contains details of the failure." />
 <meta property="og:site_name" content="AireInsights Docs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-12-21T14:53:25+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Authentication" />
+<meta property="twitter:title" content="Pipeline failures" />
 <script type="application/ld+json">
-{"description":"Aireinsights uses API key authentication.","@type":"BlogPosting","headline":"Authentication","dateModified":"2023-12-21T14:53:25+00:00","datePublished":"2023-12-21T14:53:25+00:00","url":"/docs/api/auth/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/api/auth/"},"@context":"https://schema.org"}</script>
+{"description":"If a pipeline fails whilst running, a FailedPipelineContext will be generated. This contains details of the failure.","@type":"BlogPosting","headline":"Pipeline failures","dateModified":"2023-12-21T14:53:25+00:00","datePublished":"2023-12-21T14:53:25+00:00","url":"/docs/management/failedPipelines/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/management/failedPipelines/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="/assets/posts/"/>
@@ -164,7 +164,7 @@
                     
                       
                       
-                      <li class=""><a href="/docs/management/failedPipelines/">Pipeline failures</a></li>
+                      <li class="uk-active"><a href="/docs/management/failedPipelines/">Pipeline failures</a></li>
                     
                     </ul>
                     
@@ -173,7 +173,7 @@
                     
                       
                       
-                      <li class="uk-active"><a href="/docs/api/auth/">Authentication</a></li>
+                      <li class=""><a href="/docs/api/auth/">Authentication</a></li>
                     
                       
                       
@@ -188,7 +188,7 @@
 
                 <article class="uk-article">
 
-                    <h1 class="uk-article-title">Authentication</h1>
+                    <h1 class="uk-article-title">Pipeline failures</h1>
 
                     
 
@@ -207,13 +207,17 @@
                     </div>
 
                     <div class="article-content">
-                        <p>Aireinsights uses API key authentication.</p>
+                        <p>If a pipeline fails whilst running, a <code class="language-plaintext highlighter-rouge">FailedPipelineContext</code> will be generated. This contains details of the failure.</p>
 
-<p>Set the <code class="language-plaintext highlighter-rouge">X-Api-Key</code> header with the API key for your user.</p>
+<p>A <code class="language-plaintext highlighter-rouge">FailedPipelineContext</code> can be retried, for example if you have since fixed a failing module, or an unavailable external service is now available.</p>
+
+<p>If a pipeline was originally triggered by a <code class="language-plaintext highlighter-rouge">DirectPost</code> trigger, rather than data being added to a data collection, the <code class="language-plaintext highlighter-rouge">FailedPipelineContext</code> will not have stored the relevant data so cannot be retried.</p>
+
+<p>See the <a href="/docs/api/Endpoints">Api Docs</a> for more information</p>
 
                         <div class="share uk-text-center">
-    <a href="https://twitter.com/intent/tweet?text=Authentication&url=/docs/api/auth/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
-    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fdocs%2Fapi%2Fauth%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    <a href="https://twitter.com/intent/tweet?text=Pipeline failures&url=/docs/management/failedPipelines/&via=airelogic&related=airelogic" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    <a  class="uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fdocs%2Fmanagement%2FfailedPipelines%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
 </div>
 
                     </div>
@@ -249,19 +253,16 @@
 
   
   
-
-  
-  
     <ul class="uk-pagination uk-margin-top">
           
             
             
-            <li><a class="hvr-back" href="/docs/management/failedPipelines/">&larr; Previous</a></li>
+            <li><a class="hvr-back" href="/docs/sdk/csharp-dotnet-sdk/">&larr; Previous</a></li>
           
           
             
             
-            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/api/endpoints/">Next &rarr;</a></li>
+            <li class="uk-margin-auto-left"><a class="hvr-forward" href="/docs/api/auth/">Next &rarr;</a></li>
           
     </ul>
     
@@ -292,7 +293,16 @@
     
 
     
-        <li><a href="/docs/api/endpoints/">Endpoints</a></li>
+
+    
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/concepts/data-lake/">Data Lake</a></li>
         
         
     
@@ -305,70 +315,7 @@
     
 
     
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-        <li><a href="/docs/sdk/csharp-dotnet-sdk/">C# SDK</a></li>
+        <li><a href="/docs/concepts/pipeline/">Data Pipeline</a></li>
         
         
     
@@ -381,12 +328,23 @@
     
 
     
-        <li><a href="/docs/sdk/python-sdk/">Python SDK</a></li>
+        <li><a href="/docs/concepts/step/">Processing Step</a></li>
         
         
     
 
     
+
+    
+    
+
+    
+
+    
+        <li><a href="/docs/concepts/trigger/">Pipeline triggers</a></li>
+        
+        
+            
     </ul>
 </div>
 
@@ -476,7 +434,7 @@
         
           
           
-          <li class=""><a href="/docs/management/failedPipelines/">Pipeline failures</a></li>
+          <li class="uk-active"><a href="/docs/management/failedPipelines/">Pipeline failures</a></li>
         
         </ul>
         
@@ -485,7 +443,7 @@
         
           
           
-          <li class="uk-active"><a href="/docs/api/auth/">Authentication</a></li>
+          <li class=""><a href="/docs/api/auth/">Authentication</a></li>
         
           
           
