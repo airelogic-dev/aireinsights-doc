@@ -14,11 +14,11 @@
 <meta property="og:description" content="The getting started guide shows how to create a simple pipeline, this guide is more in depth." />
 <meta property="og:site_name" content="AireInsights Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-12-21T14:53:25+00:00" />
+<meta property="article:published_time" content="2024-02-01T09:08:53+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Data Pipeline" />
 <script type="application/ld+json">
-{"description":"The getting started guide shows how to create a simple pipeline, this guide is more in depth.","@type":"BlogPosting","headline":"Data Pipeline","dateModified":"2023-12-21T14:53:25+00:00","datePublished":"2023-12-21T14:53:25+00:00","url":"/docs/concepts/pipeline/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/concepts/pipeline/"},"@context":"https://schema.org"}</script>
+{"description":"The getting started guide shows how to create a simple pipeline, this guide is more in depth.","@type":"BlogPosting","headline":"Data Pipeline","dateModified":"2024-02-01T09:08:53+00:00","datePublished":"2024-02-01T09:08:53+00:00","url":"/docs/concepts/pipeline/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/concepts/pipeline/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="/assets/posts/"/>
@@ -199,9 +199,9 @@
 
 
 
-<time datetime="2023-12-21T14:53:25+00:00" itemprop="datePublished">
+<time datetime="2024-02-01T09:08:53+00:00" itemprop="datePublished">
     
-    Dec 21, 2023
+    Feb 1, 2024
 </time>
 
                     </div>
@@ -226,6 +226,7 @@ filtering data, calling modules or external services. Each step calls out to a m
   <span class="pi">-</span> <span class="s">Step</span>
 <span class="na">Output</span><span class="pi">:</span>
   <span class="na">CallbackEndpoint</span><span class="pi">:</span> <span class="s">Url</span>
+  <span class="na">FailureEndpoint</span><span class="pi">:</span> <span class="s">Url</span>
   <span class="na">DataCollection</span><span class="pi">:</span> <span class="s">String</span>
   <span class="na">DataFormat</span><span class="pi">:</span> <span class="s">DataFormat</span>
   <span class="na">Template</span><span class="pi">:</span> <span class="s">Liquid</span>
@@ -239,6 +240,7 @@ filtering data, calling modules or external services. Each step calls out to a m
   </span><span class="nl">"Steps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">Step</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">],</span><span class="w">
   </span><span class="nl">"Output"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"CallbackEndpoint"</span><span class="p">:</span><span class="w"> </span><span class="err">Url</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FailureEndpoint"</span><span class="p">:</span><span class="w"> </span><span class="err">Url</span><span class="p">,</span><span class="w">
     </span><span class="nl">"DataCollection"</span><span class="p">:</span><span class="w"> </span><span class="err">String</span><span class="p">,</span><span class="w">
     </span><span class="nl">"DataFormat"</span><span class="p">:</span><span class="w"> </span><span class="err">DataFormat</span><span class="p">,</span><span class="w">
     </span><span class="nl">"Template"</span><span class="p">:</span><span class="w"> </span><span class="err">Liquid</span><span class="w">
@@ -276,13 +278,18 @@ filtering data, calling modules or external services. Each step calls out to a m
 <em>Required:</em> Conditional <br />
 <em>Type:</em> Url</p>
 
+<h3 id="outputfailureendpoint">Output/FailureEndpoint</h3>
+<p>Endpoint where a <a href="/docs/management/failedPipelines">failure notification</a> should be sent<br />
+<em>Required:</em> Conditional <br />
+<em>Type:</em> Url</p>
+
 <h3 id="outputdatacollection">Output/DataCollection</h3>
 <p>Name of the data collection where the pipeline output should be saved to.<br />
 <em>Required:</em> Conditional <br />
 <em>Type:</em> Url</p>
 
 <h3 id="outputdataformat">Output/DataFormat</h3>
-<p>The data format of the pipeline’s output data, this is used fo the <code class="language-plaintext highlighter-rouge">Content-Type</code> header when calling the <code class="language-plaintext highlighter-rouge">CallbackEndpoint</code> or used as meta data when stored to the <code class="language-plaintext highlighter-rouge">DataCollection</code>.<br />
+<p>The data format of the pipeline’s output data, this is used for the <code class="language-plaintext highlighter-rouge">Content-Type</code> header when calling the <code class="language-plaintext highlighter-rouge">CallbackEndpoint</code> or used as meta data when stored to the <code class="language-plaintext highlighter-rouge">DataCollection</code>.<br />
 <em>Required:</em> Yes <br />
 <em>Type:</em> DataFormat<br />
 <em>Options:</em> <code class="language-plaintext highlighter-rouge">Raw</code> (0), <code class="language-plaintext highlighter-rouge">Json</code> (1), <code class="language-plaintext highlighter-rouge">Xml</code> (2), <code class="language-plaintext highlighter-rouge">Csv</code> (3), <code class="language-plaintext highlighter-rouge">Text</code> (4)</p>
