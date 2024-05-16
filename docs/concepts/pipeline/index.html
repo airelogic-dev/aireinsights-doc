@@ -14,11 +14,11 @@
 <meta property="og:description" content="The getting started guide shows how to create a simple pipeline, this guide is more in depth." />
 <meta property="og:site_name" content="AireInsights Docs" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-02-01T09:08:53+00:00" />
+<meta property="article:published_time" content="2024-05-16T15:29:31+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Data Pipeline" />
 <script type="application/ld+json">
-{"description":"The getting started guide shows how to create a simple pipeline, this guide is more in depth.","@type":"BlogPosting","headline":"Data Pipeline","dateModified":"2024-02-01T09:08:53+00:00","datePublished":"2024-02-01T09:08:53+00:00","url":"/docs/concepts/pipeline/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/concepts/pipeline/"},"@context":"https://schema.org"}</script>
+{"description":"The getting started guide shows how to create a simple pipeline, this guide is more in depth.","@type":"BlogPosting","headline":"Data Pipeline","dateModified":"2024-05-16T15:29:31+00:00","datePublished":"2024-05-16T15:29:31+00:00","url":"/docs/concepts/pipeline/","mainEntityOfPage":{"@type":"WebPage","@id":"/docs/concepts/pipeline/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="/assets/posts/"/>
@@ -63,7 +63,7 @@
                     
                     
                     
-                        <li><a href="https://www.airelogic.com/" target="_blank" >About Airelogic</a></li>
+                        <li><a href="https://www.airelogic.com/aireinnovate" target="_blank" >About AireInnovate</a></li>
                     
                 
             </ul>
@@ -199,9 +199,9 @@
 
 
 
-<time datetime="2024-02-01T09:08:53+00:00" itemprop="datePublished">
+<time datetime="2024-05-16T15:29:31+00:00" itemprop="datePublished">
     
-    Feb 1, 2024
+    May 16, 2024
 </time>
 
                     </div>
@@ -276,17 +276,17 @@ filtering data, calling modules or external services. Each step calls out to a m
 <h3 id="outputcallbackendpoint">Output/CallbackEndpoint</h3>
 <p>Endpoint where the pipeline output should be sent to.<br />
 <em>Required:</em> Conditional <br />
-<em>Type:</em> Url</p>
+<em>Type:</em> Liquid (must evaluate to a url)</p>
 
 <h3 id="outputfailureendpoint">Output/FailureEndpoint</h3>
 <p>Endpoint where a <a href="/docs/management/failedPipelines">failure notification</a> should be sent<br />
 <em>Required:</em> Conditional <br />
-<em>Type:</em> Url</p>
+<em>Type:</em> Liquid (must evaluate to a url)</p>
 
 <h3 id="outputdatacollection">Output/DataCollection</h3>
 <p>Name of the data collection where the pipeline output should be saved to.<br />
 <em>Required:</em> Conditional <br />
-<em>Type:</em> Url</p>
+<em>Type:</em> Liquid</p>
 
 <h3 id="outputdataformat">Output/DataFormat</h3>
 <p>The data format of the pipeline’s output data, this is used for the <code class="language-plaintext highlighter-rouge">Content-Type</code> header when calling the <code class="language-plaintext highlighter-rouge">CallbackEndpoint</code> or used as meta data when stored to the <code class="language-plaintext highlighter-rouge">DataCollection</code>.<br />
@@ -564,7 +564,7 @@ filtering data, calling modules or external services. Each step calls out to a m
             <li><a href="/changelog/" >Changelog</a></li>
             
                 
-            <li><a href="https://www.airelogic.com/" target="_blank" >About Airelogic</a></li>
+            <li><a href="https://www.airelogic.com/aireinnovate" target="_blank" >About AireInnovate</a></li>
             
         </ul>
 
